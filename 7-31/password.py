@@ -2,6 +2,8 @@ import random
 from openpyxl import Workbook
 import datetime
 
+# 使用 A-Z a-z 0-9 !@#$% 四种进行生成8为密码 至少包含四种的任意一个
+
 upper = ["A", "B", "C", "D", "E", "F", "G",
          "H", "I", "J", "K", "L", "M", "N",
          "O", "P", "Q", "R", "S", "T",
