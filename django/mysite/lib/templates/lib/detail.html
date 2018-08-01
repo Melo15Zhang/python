@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block mainbody %}
+    <p>继承了 base.html 文件</p>
+    {# 这是一个注释 #}
+    <h1>Book List </h1>
+    {% ifequal section 'sitenews' %}
+        <h1>Site News</h1>
+    {% else %}
+        <h1>No News Here</h1>
+    {% endifequal %}
+
+    <table>
+        <tr>
+            <td>Book name</td>
+            <td>author</td>
+            <td>publisher</td>
+            <td>publishdate</td>
+            <td>corprator</td>
+        </tr>
+    {% for book in book_list.all %}
+        <tr>
+            <td>{{ book.name |lower}}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.pub_house |upper}}</td>
+            <td>{{ book.pub_date}}</td>
+            <td> <a href ="{% url 'lib:delBook' book.id %}"> delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+
+    <form action="{% url 'lib:addBook' %}" method="post" name= "addBook">
+        {% csrf_token %}
+        <p> <span> book name :</span><input type="text" name="name"></p>
+        <p> <span>author:</span> <input type="text" name="author"></p>
+        <p> <span>publisher:</span> <input type="text" name="pub_house"></p>
+         <input type="submit" value="add">
+    <form>
+
+{% endblock %}
