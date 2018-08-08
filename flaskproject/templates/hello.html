@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello from Flask</title>
+    <link href="../static/hello.css" rel="stylesheet"/>
+</head>
+<body>
+    {% if name %}
+      <h1 class="hello">Hello {{ name }}!, login Success</h1>
+    {% else %}
+      <h1 class="hello">Hello World!</h1>
+    {% endif %}
+</body>
+</html>

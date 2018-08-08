@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask UploadFile</title>
+    <link href="../static/hello.css" rel="stylesheet"/>
+</head>
+<body>
+    {% if error %}
+      <h1 class="sorry"> {{ error }} !</h1>
+    {% endif %}
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="testfile" />
+         <br/>
+        <input type="submit" value="上传" />
+    </form>
+</body>
+</html>
