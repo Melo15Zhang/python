@@ -14,6 +14,8 @@ def hello(name=None):
     # 而不是cookies[key]，这是防止该字典不存在时报错"keyerror"
     resp = make_response(render_template('hello.html', name=username))
     resp.set_cookie('username', 'Python')
+
+    # 此处已经体现了  获取在视图中得到的响应对象 然后对响应对象设置不同的值  进而对返回对象进行修改 最终返回
     return resp
 
 
