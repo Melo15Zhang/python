@@ -2,6 +2,9 @@
 import os
 import sys
 
+# 现在运行migrate命令，在数据库里创建新定义的模型的数据表：
+# python manage.py migrate
+
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
     try:
